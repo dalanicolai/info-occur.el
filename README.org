@@ -1,0 +1,24 @@
+#+TITLE: info-occur.el
+
+This package provides an Info-occur search feature, similar to pdf-occur. When
+using the `Info-occur' command in an Info buffer, it will search in the manual
+of that buffer. Using this command from other modes, it will ask to select one
+or multiple manuals to search. To search in multiple manuals directly from an
+info buffer prefix the command with a `universal-argument'.
+
+* TODO Fix tablist-operations-function (jump to match)
+  - For some reason, despite the form working correctly when evaluating with =M-:=
+   #+begin_src emacs-lisp
+     (bookmark--jump-via item 'switch-to-buffer-other-window)
+   #+end_src 
+   this does not jump to the exact location of the entry when using the
+    ~tablist-find-entry~ command in the tablist buffer
+
+* TODO Add 'match face property
+  For some mysterious reason, the (out-commented) code for adding the =match= face
+  property to the text in the tablist does not work
+
+* TODO Small improvements
+  - Automatically optimize size of tablist fields (adapt to longest field string)
+  - crop the sentences (text) in the tablist to their relevant parts
+  - Maybe only add entries for nodes if there are too many matches
